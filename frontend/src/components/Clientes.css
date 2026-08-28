@@ -1,0 +1,111 @@
+/* ── Counter ─────────────────────────────────────────────────────────────── */
+.clientes__counter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.counter-badge {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+  color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 28px 48px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.counter-badge__num {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.counter-badge__label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ── Grid clientes ───────────────────────────────────────────────────────── */
+.clientes__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.cliente-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all var(--transition);
+}
+
+.cliente-card:hover {
+  border-color: var(--primary-300);
+  background: var(--primary-50);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.cliente-card__icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.cliente-card__name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+/* ── Testimonio ──────────────────────────────────────────────────────────── */
+.testimonial {
+  background: var(--primary-50);
+  border-left: 4px solid var(--primary-500);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.testimonial__quote {
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--primary-300);
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+
+.testimonial__text {
+  font-size: 1.05rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  font-style: italic;
+  margin-top: 16px;
+  padding-left: 16px;
+}
+
+.testimonial__author {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary-700);
+  padding-left: 16px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .testimonial { padding: 32px 24px; }
+  .clientes__grid { grid-template-columns: 1fr; }
+}

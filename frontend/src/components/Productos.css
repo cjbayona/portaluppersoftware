@@ -1,0 +1,242 @@
+/* ── Page header ─────────────────────────────────────────────────────────── */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-900), var(--primary-600));
+  color: var(--white);
+  padding: 72px 0 64px;
+}
+
+.page-header__title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-header__sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ── Productos ───────────────────────────────────────────────────────────── */
+.prod__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  gap: 28px;
+}
+
+.prod-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prod-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.prod-card__icon {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.prod-card__name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-800);
+  margin-bottom: 4px;
+}
+
+.prod-card__desc {
+  font-size: 0.92rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ── Lista de características ────────────────────────────────────────────── */
+.prod-card__features-wrap {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.prod-card__features-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--primary-700);
+  margin-bottom: 14px;
+}
+
+.prod-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prod-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+.prod-card__features li .check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-weight: 700;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.prod-card__toggle {
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: var(--primary-600);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color var(--transition);
+}
+
+.prod-card__toggle:hover {
+  color: var(--primary-800);
+}
+
+.prod-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ── Servicios ───────────────────────────────────────────────────────────── */
+.serv__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.serv-card {
+  padding: 36px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.serv-card__icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.serv-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.serv-card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-800);
+}
+
+.serv-card__desc {
+  font-size: 0.92rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* ── Precios ─────────────────────────────────────────────────────────────── */
+.precios__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.precio-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.precio-card__header {
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+  color: var(--white);
+  padding: 32px 28px 28px;
+}
+
+.precio-card__nombre {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.precio-card__desc {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.precio-card__features {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.precio-card__features li {
+  font-size: 0.92rem;
+  color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.precio-card__footer {
+  padding: 0 28px 28px;
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .prod__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .serv-card { flex-direction: column; }
+  .prod-card__header { flex-direction: column; }
+}
