@@ -50,11 +50,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA */}
-        <Link to="/contacto" className="btn btn-primary navbar__cta" onClick={closeMenu}>
-          Contáctenos
-        </Link>
-
         {/* Hamburger */}
         <button
           className={`navbar__hamburger${open ? ' is-open' : ''}`}
@@ -81,9 +76,6 @@ export default function Navbar() {
             {l.label}
           </NavLink>
         ))}
-        <Link to="/contacto" className="btn btn-primary navbar__drawer-cta" onClick={closeMenu}>
-          Contáctenos
-        </Link>
       </div>
     </header>
   );

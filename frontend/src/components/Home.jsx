@@ -27,7 +27,6 @@ export default function Home() {
           </p>
           <div className="hero__actions">
             <Link to="/productos" className="btn btn-accent">Ver productos</Link>
-            <Link to="/contacto" className="btn btn-outline hero__btn-outline">Contáctenos</Link>
           </div>
         </div>
         <div className="hero__wave">
