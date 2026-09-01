@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import './Clientes.css';
 
 export default function Clientes() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/clientes').then((r) => setData(r.data)).catch(() => {});
+    api.get('/api/clientes').then((r) => setData(r.data)).catch(() => {});
   }, []);
 
   const clientes = data?.clientes ?? [];

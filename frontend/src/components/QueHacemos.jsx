@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import './QueHacemos.css';
 
 const pilares = [
@@ -15,7 +15,7 @@ export default function QueHacemos() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/que-hacemos').then((r) => setData(r.data)).catch(() => {});
+    api.get('/api/que-hacemos').then((r) => setData(r.data)).catch(() => {});
   }, []);
 
   return (

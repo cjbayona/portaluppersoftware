@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import './Contacto.css';
 
 export default function Contacto() {
@@ -8,7 +8,7 @@ export default function Contacto() {
   const [status, setStatus] = useState(null); // 'sending' | 'ok' | 'error'
 
   useEffect(() => {
-    axios.get('/api/contacto').then((r) => setInfo(r.data)).catch(() => {});
+    api.get('/api/contacto').then((r) => setInfo(r.data)).catch(() => {});
   }, []);
 
   const handleChange = (e) => {
@@ -19,7 +19,7 @@ export default function Contacto() {
     e.preventDefault();
     setStatus('sending');
     try {
-      await axios.post('/api/contacto/mensaje', form);
+      await api.post('/api/contacto/mensaje', form);
       setStatus('ok');
       setForm({ nombre: '', email: '', asunto: '', mensaje: '' });
     } catch {

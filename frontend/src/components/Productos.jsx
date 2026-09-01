@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import './Productos.css';
 
 export default function Productos() {
@@ -9,8 +9,8 @@ export default function Productos() {
   const [expanded, setExpanded] = useState({});
 
   useEffect(() => {
-    axios.get('/api/productos').then((r) => setProductos(r.data)).catch(() => {});
-    axios.get('/api/precios').then((r) => setPrecios(r.data)).catch(() => {});
+    api.get('/api/productos').then((r) => setProductos(r.data)).catch(() => {});
+    api.get('/api/precios').then((r) => setPrecios(r.data)).catch(() => {});
   }, []);
 
   const toggleExpand = (id) =>

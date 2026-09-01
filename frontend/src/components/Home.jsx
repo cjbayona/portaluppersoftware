@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import './Home.css';
 
 export default function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/quienes-somos').then((r) => setData(r.data)).catch(() => {});
+    api.get('/api/quienes-somos').then((r) => setData(r.data)).catch(() => {});
   }, []);
 
   return (
