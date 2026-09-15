@@ -1,0 +1,165 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  UpperSoftware - Formulario de contacto. Crea una funcion Lambda con URL publica
+  que recibe el formulario del sitio web y envia el mensaje por correo usando Amazon SES.
+
+Parameters:
+  RecipientEmail:
+    Type: String
+    Default: uppersoftware.colombia@gmail.com
+    Description: Correo que RECIBE los mensajes del formulario (debe estar verificado en SES).
+  SenderEmail:
+    Type: String
+    Default: uppersoftware.colombia@gmail.com
+    Description: >
+      Correo REMITENTE (debe estar verificado en SES). Recomendado: una direccion de su
+      dominio verificado, p. ej. no-reply@uppersoftware.com.
+  AllowedOrigins:
+    Type: CommaDelimitedList
+    Default: 'https://www.uppersoftware.com,https://uppersoftware.com'
+    Description: >
+      Dominios autorizados a usar el formulario, separados por coma. Agregue aqui la URL
+      de Amplify (https://main.xxxx.amplifyapp.com) mientras prueba.
+
+Resources:
+  ContactFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: send-email
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: ses:SendEmail
+                Resource: !Sub 'arn:aws:ses:${AWS::Region}:${AWS::AccountId}:identity/*'
+
+  ContactFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: Envia por correo los mensajes del formulario de contacto de uppersoftware.com
+      Runtime: nodejs22.x
+      Handler: index.handler
+      MemorySize: 128
+      Timeout: 10
+      Role: !GetAtt ContactFunctionRole.Arn
+      Environment:
+        Variables:
+          TO_EMAIL: !Ref RecipientEmail
+          FROM_EMAIL: !Ref SenderEmail
+      Code:
+        ZipFile: |
+          const { SESv2Client, SendEmailCommand } = require('@aws-sdk/client-sesv2');
+          const ses = new SESv2Client({});
+
+          const reply = (statusCode, body) => ({
+            statusCode,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+          });
+          const clean = (v, max) => [...String(v ?? '')].filter((ch) => { const c = ch.charCodeAt(0); return c >= 32 || c === 9 || c === 10 || c === 13; }).join('').trim().slice(0, max);
+          const oneLine = (v) => v.replace(/[\r\n]+/g, ' ');
+          const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+          const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/;
+
+          exports.handler = async (event) => {
+            if (event.requestContext?.http?.method !== 'POST') return reply(405, { ok: false, error: 'Metodo no permitido' });
+
+            let data;
+            try {
+              const raw = event.isBase64Encoded ? Buffer.from(event.body || '', 'base64').toString() : event.body;
+              if ((raw || '').length > 20000) return reply(413, { ok: false, error: 'Mensaje demasiado largo' });
+              data = JSON.parse(raw || '{}');
+            } catch {
+              return reply(400, { ok: false, error: 'Solicitud invalida' });
+            }
+
+            // Anti-spam: campo trampa lleno o envio en menos de 3 segundos => se descarta en silencio
+            if (data.website || Number(data.elapsedMs) < 3000) return reply(200, { ok: true });
+
+            const f = {
+              nombre: oneLine(clean(data.nombre, 100)),
+              empresa: oneLine(clean(data.empresa, 120)),
+              correo: oneLine(clean(data.correo, 150)),
+              telefono: oneLine(clean(data.telefono, 30)),
+              interes: oneLine(clean(data.interes, 80)),
+              mensaje: clean(data.mensaje, 3000),
+            };
+            if (!f.nombre || !EMAIL_RE.test(f.correo) || f.mensaje.length < 5 || data.autorizacion !== true) {
+              return reply(400, { ok: false, error: 'Datos incompletos' });
+            }
+
+            const rows = [
+              ['Nombre', f.nombre], ['Empresa', f.empresa || '-'], ['Correo', f.correo],
+              ['Telefono', f.telefono || '-'], ['Interes', f.interes || '-'],
+            ];
+            const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nMensaje:\n${f.mensaje}\n`;
+            const html = `<div style="font-family:Arial,sans-serif;color:#1e293b">
+              <h2 style="color:#246dad;margin:0 0 12px">Nuevo mensaje desde uppersoftware.com</h2>
+              <table cellpadding="6" style="border-collapse:collapse">${rows.map(([k, v]) =>
+                `<tr><td style="color:#64748b">${k}</td><td><strong>${esc(v)}</strong></td></tr>`).join('')}</table>
+              <p style="color:#64748b;margin:16px 0 4px">Mensaje:</p>
+              <div style="white-space:pre-wrap;background:#f0f7fd;border-radius:8px;padding:12px">${esc(f.mensaje)}</div>
+              <p style="color:#94a3b8;font-size:12px;margin-top:16px">Responda este correo para contestarle directamente al cliente. El cliente autorizo el tratamiento de sus datos (Ley 1581 de 2012).</p>
+            </div>`;
+
+            try {
+              await ses.send(new SendEmailCommand({
+                FromEmailAddress: `Portal UpperSoftware <${process.env.FROM_EMAIL}>`,
+                Destination: { ToAddresses: [process.env.TO_EMAIL] },
+                ReplyToAddresses: [f.correo],
+                Content: {
+                  Simple: {
+                    Subject: { Data: `[Web] ${f.interes || 'Contacto'} - ${f.nombre}`, Charset: 'UTF-8' },
+                    Body: { Text: { Data: text, Charset: 'UTF-8' }, Html: { Data: html, Charset: 'UTF-8' } },
+                  },
+                },
+              }));
+              return reply(200, { ok: true });
+            } catch (err) {
+              console.error('Error enviando correo', err);
+              return reply(500, { ok: false, error: 'No se pudo enviar el correo' });
+            }
+          };
+
+  ContactFunctionUrl:
+    Type: AWS::Lambda::Url
+    Properties:
+      TargetFunctionArn: !Ref ContactFunction
+      AuthType: NONE
+      Cors:
+        AllowOrigins: !Ref AllowedOrigins
+        AllowMethods: [POST]
+        AllowHeaders: [content-type]
+        MaxAge: 86400
+
+  # Permisos para que la URL publica pueda invocar la funcion
+  # (AWS exige ambos permisos para URLs creadas desde octubre de 2025).
+  ContactFunctionUrlPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ContactFunction
+      Action: lambda:InvokeFunctionUrl
+      Principal: '*'
+      FunctionUrlAuthType: NONE
+
+  ContactFunctionInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ContactFunction
+      Action: lambda:InvokeFunction
+      Principal: '*'
+      InvokedViaFunctionUrl: true
+
+Outputs:
+  ContactFormUrl:
+    Description: Copie este valor en site/assets/js/config.js (contactEndpoint)
+    Value: !GetAtt ContactFunctionUrl.FunctionUrl

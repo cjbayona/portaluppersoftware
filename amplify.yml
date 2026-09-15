@@ -1,0 +1,13 @@
+# AWS Amplify Hosting: publica la carpeta "site" tal cual (el CSS ya viene compilado).
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Sitio estatico, sin compilacion"
+  artifacts:
+    baseDirectory: site
+    files:
+      - '**/*'
+  cache:
+    paths: []

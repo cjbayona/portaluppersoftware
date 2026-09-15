@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UpperSoftware S.A.S | Software de nómina, contabilidad y a la medida</title>
+  <meta name="description" content="UpperSoftware S.A.S: más de diez años desarrollando software en Colombia. NominaSIC (nómina electrónica DIAN), MyCont (contabilidad NIIF) y fábrica de software a la medida." />
+  <meta name="theme-color" content="#246dad" />
+  <meta property="og:title" content="UpperSoftware S.A.S" />
+  <meta property="og:description" content="Software de nómina, contabilidad y desarrollo a la medida. Cumplimos la normativa colombiana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.uppersoftware.com/" />
+  <meta property="og:image" content="https://www.uppersoftware.com/assets/img/logo.png" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-white font-sans text-slate-700 antialiased">
+
+  <!-- ============ ENCABEZADO ============ -->
+  <header id="top" class="sticky top-0 z-40 border-b border-brand-100/80 bg-white/90 backdrop-blur">
+    <nav class="container-x flex h-20 items-center justify-between" aria-label="Principal">
+      <a href="#inicio" class="flex items-center gap-3">
+        <img src="assets/img/logo.png" alt="UpperSoftware — now in your world" class="h-14 w-auto" width="174" height="142" />
+      </a>
+      <ul class="hidden items-center gap-7 text-sm font-medium text-slate-600 lg:flex">
+        <li><a class="hover:text-brand-700" href="#quienes-somos">Quiénes somos</a></li>
+        <li><a class="hover:text-brand-700" href="#que-hacemos">Qué hacemos</a></li>
+        <li><a class="hover:text-brand-700" href="#productos">Productos</a></li>
+        <li><a class="hover:text-brand-700" href="#clientes">Clientes</a></li>
+        <li><a class="hover:text-brand-700" href="#precios">Precios</a></li>
+      </ul>
+      <a href="#contacto" class="btn-primary hidden lg:inline-flex">Contáctenos</a>
+      <button id="menu-btn" type="button" class="rounded-lg p-2 text-slate-700 hover:bg-brand-50 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-brand-100 bg-white lg:hidden">
+      <ul class="container-x flex flex-col py-3 text-base font-medium text-slate-700">
+        <li><a class="block py-2.5" href="#quienes-somos">Quiénes somos</a></li>
+        <li><a class="block py-2.5" href="#que-hacemos">Qué hacemos</a></li>
+        <li><a class="block py-2.5" href="#productos">Productos</a></li>
+        <li><a class="block py-2.5" href="#clientes">Clientes</a></li>
+        <li><a class="block py-2.5" href="#precios">Precios</a></li>
+        <li class="pt-2"><a class="btn-primary w-full" href="#contacto">Contáctenos</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+      <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"></div>
+      <div class="pointer-events-none absolute -left-24 top-40 h-72 w-72 rounded-full bg-sky-200/40 blur-3xl"></div>
+      <div class="container-x relative grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white px-3 py-1 text-xs font-semibold text-brand-700">
+            <span class="h-2 w-2 rounded-full bg-brand-500"></span> Más de 10 años de experiencia en Colombia
+          </span>
+          <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+            Software que <span class="text-brand-600">optimiza</span> los procesos de su empresa
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            Nómina, contabilidad y desarrollo a la medida, construidos con las mejores prácticas y
+            en cumplimiento de toda la normativa colombiana.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#productos" class="btn-primary">Conozca nuestros productos</a>
+            <a href="#" data-whatsapp class="btn-wa" target="_blank" rel="noopener">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+              Escríbanos por WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card col-span-2 flex items-center gap-4">
+            <div class="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a4 4 0 00-5-3.87M9 20H2v-2a4 4 0 015-3.87m6-4.13a4 4 0 11-8 0 4 4 0 018 0zm6 2a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-900">NominaSIC</p>
+              <p class="text-sm text-slate-500">Nómina integrada con Nómina Electrónica DIAN</p>
+            </div>
+          </div>
+          <div class="card flex flex-col gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3v-6m-3 6v-1M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+            <p class="font-semibold text-slate-900">MyCont</p>
+            <p class="text-sm text-slate-500">Contabilidad bajo NIIF</p>
+          </div>
+          <div class="card flex flex-col gap-3 bg-brand-600 text-white">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <p class="font-semibold">Fábrica de Software</p>
+            <p class="text-sm text-brand-100">Desarrollo a la medida</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUIÉNES SOMOS ============ -->
+    <section id="quienes-somos" class="py-20">
+      <div class="container-x grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="eyebrow">Quiénes somos</p>
+          <h2 class="h2">Una compañía colombiana comprometida con la calidad</h2>
+          <p class="mt-6 text-lg leading-relaxed text-slate-600">
+            UpperSoftware S.A.S es una compañía colombiana con más de diez años de experiencia en el sector
+            de informática. Somos una empresa responsable cuya oferta de valor es ofrecer servicios de software
+            de calidad que permitan a nuestros clientes optimizar y mejorar continuamente sus procesos.
+          </p>
+        </div>
+        <dl class="grid grid-cols-2 gap-4">
+          <div class="card text-center">
+            <dt class="text-sm text-slate-500">Años de experiencia</dt>
+            <dd class="mt-2 text-4xl font-extrabold text-brand-600">+10</dd>
+          </div>
+          <div class="card text-center">
+            <dt class="text-sm text-slate-500">Empresas cliente</dt>
+            <dd class="mt-2 text-4xl font-extrabold text-brand-600">+15</dd>
+          </div>
+          <div class="card text-center">
+            <dt class="text-sm text-slate-500">Productos propios</dt>
+            <dd class="mt-2 text-4xl font-extrabold text-brand-600">2</dd>
+          </div>
+          <div class="card text-center">
+            <dt class="text-sm text-slate-500">Normativa</dt>
+            <dd class="mt-2 text-2xl font-extrabold leading-10 text-brand-600">DIAN · NIIF</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ QUÉ HACEMOS ============ -->
+    <section id="que-hacemos" class="bg-brand-50/60 py-20">
+      <div class="container-x">
+        <div class="max-w-3xl">
+          <p class="eyebrow">Qué hacemos</p>
+          <h2 class="h2">Productos de software que responden al mercado actual</h2>
+          <p class="mt-6 text-lg leading-relaxed text-slate-600">
+            Nos dedicamos a la elaboración de productos de software que cumplen con todas las especificaciones
+            del mercado actual. En su construcción incorporamos las mejores prácticas para garantizar una debida
+            y oportuna atención a sus necesidades de procesamiento de información, colaborando así en la mejora
+            de sus procesos.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <div class="card">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Productos estándar</h3>
+            <p class="mt-2 text-slate-600">Aplicaciones listas para usar en nómina y contabilidad, actualizadas con la normativa colombiana.</p>
+          </div>
+          <div class="card">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Desarrollo a la medida</h3>
+            <p class="mt-2 text-slate-600">Construimos la aplicación que su operación necesita, acompañándole en todo el ciclo de vida del producto.</p>
+          </div>
+          <div class="card">
+            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.6-4.02A11.96 11.96 0 0112 2.94a11.96 11.96 0 01-8.6 3.04A12 12 0 003 9c0 5.6 3.82 10.3 9 11.62 5.18-1.33 9-6.03 9-11.62 0-1.04-.13-2.05-.38-3.02z"/></svg>
+            </div>
+            <h3 class="mt-4 text-lg font-semibold text-slate-900">Mejores prácticas</h3>
+            <p class="mt-2 text-slate-600">Calidad y atención oportuna para que su información se procese de forma confiable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTOS ============ -->
+    <section id="productos" class="py-20">
+      <div class="container-x">
+        <div class="max-w-3xl">
+          <p class="eyebrow">Nuestros productos</p>
+          <h2 class="h2">Soluciones que cumplen con toda la normativa colombiana</h2>
+        </div>
+
+        <div class="mt-12 grid gap-8 lg:grid-cols-2">
+          <article class="card flex flex-col p-8">
+            <div class="flex items-center justify-between">
+              <h3 class="text-2xl font-bold text-slate-900">NominaSIC</h3>
+              <span class="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">Nómina</span>
+            </div>
+            <p class="mt-2 text-slate-600">Aplicación de nómina completamente integrada con la contabilidad.</p>
+            <ul class="checks mt-6">
+              <li>Generación de la Nómina Electrónica DIAN.</li>
+              <li>Manejo de los diferentes contratos con los empleados.</li>
+              <li>Liquidación de devengos semanal, quincenal, mensual, a destajo, etc., con descuentos y aportes de ley automáticos.</li>
+              <li>Control y liquidación de prestaciones sociales: cesantías, intereses, vacaciones y primas.</li>
+              <li>Liquidación automática de horas extras diurnas, nocturnas y dominicales.</li>
+              <li>Contabilización automática de la nómina, provisiones y pasivos con EPS, pensión y parafiscales.</li>
+              <li>Envío automático del desprendible de pago al correo de cada empleado.</li>
+              <li>Certificado anual de ingresos y retenciones por empleado.</li>
+            </ul>
+            <details class="group mt-4">
+              <summary class="cursor-pointer list-none text-sm font-semibold text-brand-700 hover:text-brand-800">
+                <span class="group-open:hidden">Ver todas las características +</span>
+                <span class="hidden group-open:inline">Ver menos −</span>
+              </summary>
+              <ul class="checks mt-4">
+                <li>Historial por empleado: datos del contrato, salarios, devengos y deducciones.</li>
+                <li>Registro y control de centros de costos asociados a cada contrato.</li>
+                <li>Parametrización de los conceptos de nómina y de su forma de liquidación.</li>
+                <li>Creación de entidades organizacionales y de cargos con sus funciones y tipo.</li>
+                <li>Control de pagos y novedades de pago.</li>
+                <li>Planilla de nómina, informes y desprendibles con control de estado: borrador, confirmado, contabilizado o anulado.</li>
+                <li>Control de antigüedad y libro de vacaciones de cada empleado.</li>
+              </ul>
+              <p class="mt-3 text-xs text-slate-500">No incluye la liquidación de indemnizaciones y otras prestaciones.</p>
+            </details>
+          </article>
+
+          <article class="card flex flex-col p-8">
+            <div class="flex items-center justify-between">
+              <h3 class="text-2xl font-bold text-slate-900">MyCont</h3>
+              <span class="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">Contabilidad</span>
+            </div>
+            <p class="mt-2 text-slate-600">Aplicación contable para llevar sus finanzas con total cumplimiento.</p>
+            <ul class="checks mt-6">
+              <li>Cumplimiento de las normas internacionales NIIF.</li>
+              <li>Generación de auxiliares y balances de comprobación.</li>
+              <li>Generación de estados financieros.</li>
+              <li>Control de activos fijos y depreciaciones.</li>
+              <li>Control de activos diferidos.</li>
+              <li>Generación de información exógena DIAN.</li>
+              <li>Generación de información exógena distrital.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="mt-8 overflow-hidden rounded-2xl bg-gradient-to-r from-brand-700 to-brand-500 p-8 text-white sm:p-10">
+          <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-2xl">
+              <p class="text-sm font-semibold uppercase tracking-wider text-brand-100">Servicio</p>
+              <h3 class="mt-1 text-2xl font-bold">Fábrica de Software</h3>
+              <p class="mt-3 text-brand-50">
+                Ponemos a su disposición nuestra fábrica de software para sus necesidades de desarrollo a la medida
+                y, en general, todos los servicios requeridos en el ciclo de vida del producto.
+              </p>
+            </div>
+            <a href="#contacto" data-interes="Fábrica de Software" class="btn flex-none bg-white text-brand-700 hover:bg-brand-50">Solicitar cotización</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTES ============ -->
+    <section id="clientes" class="bg-brand-50/60 py-20">
+      <div class="container-x">
+        <div class="max-w-3xl">
+          <p class="eyebrow">Nuestros clientes</p>
+          <h2 class="h2">Empresas que dan fe de nuestra calidad</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            A lo largo de los últimos diez años, estas compañías del sector logístico y aduanero en Colombia han confiado en nosotros.
+          </p>
+        </div>
+        <ul id="client-list" class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4"></ul>
+      </div>
+    </section>
+
+    <!-- ============ PRECIOS ============ -->
+    <section id="precios" class="py-20">
+      <div class="container-x">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow">Precios</p>
+          <h2 class="h2">Planes claros, sin sorpresas</h2>
+          <p class="mt-4 text-lg text-slate-600">Suscripción mensual. Valores en pesos colombianos (COP).</p>
+          <div class="mt-8 inline-flex rounded-xl border border-brand-200 bg-brand-50 p-1" role="tablist" aria-label="Producto">
+            <button type="button" role="tab" data-tab="nomina" aria-selected="true" class="tab rounded-lg px-5 py-2 text-sm font-semibold">NominaSIC</button>
+            <button type="button" role="tab" data-tab="mycont" aria-selected="false" class="tab rounded-lg px-5 py-2 text-sm font-semibold">MyCont</button>
+          </div>
+        </div>
+
+        <!-- NominaSIC -->
+        <div data-panel="nomina" class="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+          <div class="card flex flex-col p-8">
+            <h3 class="text-lg font-semibold text-slate-900">Básica</h3>
+            <p class="mt-4"><span class="text-4xl font-extrabold text-slate-900">$150.000</span> <span class="text-slate-500">COP / mes</span></p>
+            <ul class="checks mt-6 flex-1">
+              <li>Hasta 100 empleados</li>
+              <li>Prenómina</li>
+              <li>Nómina Electrónica DIAN</li>
+            </ul>
+            <a href="#contacto" data-interes="NominaSIC - Plan Básico" class="btn-ghost mt-8">Solicitar plan</a>
+          </div>
+          <div class="card relative flex flex-col border-2 border-brand-500 p-8 shadow-lg shadow-brand-100">
+            <span class="absolute -top-3 left-8 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white">Mayor capacidad</span>
+            <h3 class="text-lg font-semibold text-slate-900">Profesional</h3>
+            <p class="mt-4"><span class="text-4xl font-extrabold text-slate-900">$250.000</span> <span class="text-slate-500">COP / mes</span></p>
+            <ul class="checks mt-6 flex-1">
+              <li>Hasta 500 empleados</li>
+              <li>Prenómina</li>
+              <li>Nómina Electrónica DIAN</li>
+            </ul>
+            <a href="#contacto" data-interes="NominaSIC - Plan Profesional" class="btn-primary mt-8">Solicitar plan</a>
+          </div>
+        </div>
+
+        <!-- MyCont -->
+        <div data-panel="mycont" class="mx-auto mt-10 hidden max-w-4xl gap-6 md:grid-cols-2">
+          <div class="card flex flex-col p-8">
+            <h3 class="text-lg font-semibold text-slate-900">Básica</h3>
+            <p class="mt-4"><span class="text-4xl font-extrabold text-slate-900">$100.000</span> <span class="text-slate-500">COP / mes</span></p>
+            <ul class="checks mt-6 flex-1">
+              <li>Cuentas NIIF</li>
+              <li>Estados financieros</li>
+              <li>Cuentas por cobrar / pagar</li>
+            </ul>
+            <a href="#contacto" data-interes="MyCont - Plan Básico" class="btn-ghost mt-8">Solicitar plan</a>
+          </div>
+          <div class="card relative flex flex-col border-2 border-brand-500 p-8 shadow-lg shadow-brand-100">
+            <h3 class="text-lg font-semibold text-slate-900">Profesional</h3>
+            <p class="mt-4"><span class="text-4xl font-extrabold text-slate-900">$100.000</span> <span class="text-slate-500">COP / mes</span></p>
+            <ul class="checks mt-6 flex-1">
+              <li>Cuentas NIIF</li>
+              <li>Estados financieros</li>
+              <li>Cuentas por cobrar / pagar</li>
+            </ul>
+            <a href="#contacto" data-interes="MyCont - Plan Profesional" class="btn-primary mt-8">Solicitar plan</a>
+          </div>
+        </div>
+
+        <p class="mt-10 text-center text-sm text-slate-500">
+          ¿Necesita un desarrollo a la medida? <a href="#contacto" data-interes="Fábrica de Software" class="font-semibold text-brand-700 hover:underline">Solicite una cotización</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto" class="bg-gradient-to-b from-brand-50 to-white py-20">
+      <div class="container-x grid gap-10 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <p class="eyebrow">Contáctenos</p>
+          <h2 class="h2">Hablemos de su proyecto</h2>
+          <p class="mt-4 text-lg text-slate-600">Déjenos sus datos y le responderemos a la mayor brevedad, o escríbanos directamente por WhatsApp.</p>
+
+          <a href="#" data-whatsapp target="_blank" rel="noopener" class="mt-8 flex items-center gap-4 rounded-2xl bg-[#25D366] p-5 text-white shadow-lg shadow-green-200 transition hover:bg-[#1ebe5b]">
+            <svg class="h-10 w-10 flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+            <span>
+              <span class="block text-lg font-bold">Chatear por WhatsApp</span>
+              <span class="block text-sm text-green-50">Respuesta directa · +57 320 338 5405</span>
+            </span>
+          </a>
+
+          <ul class="mt-8 space-y-5">
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.66 16.66L13.41 20.9a2 2 0 01-2.83 0l-4.24-4.24a8 8 0 1111.32 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </span>
+              <span><span class="block text-sm text-slate-500">Dirección</span>
+                <a class="font-medium text-slate-900 hover:text-brand-700" href="https://www.google.com/maps/search/?api=1&query=Carrera+100+%23140A-89+Bogot%C3%A1" target="_blank" rel="noopener">Carrera 100 # 140 A 89, Bogotá D.C.</a></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </span>
+              <span><span class="block text-sm text-slate-500">Correo</span>
+                <a class="break-all font-medium text-slate-900 hover:text-brand-700" href="mailto:uppersoftware.colombia@gmail.com">uppersoftware.colombia@gmail.com</a></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>
+              </span>
+              <span><span class="block text-sm text-slate-500">Teléfono</span>
+                <a class="font-medium text-slate-900 hover:text-brand-700" href="tel:+573203385405">320 338 5405</a></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <form id="contact-form" class="card p-6 sm:p-8" novalidate>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="nombre" class="label">Nombre completo *</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required maxlength="100" class="field" />
+              </div>
+              <div>
+                <label for="empresa" class="label">Empresa</label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization" maxlength="120" class="field" />
+              </div>
+              <div>
+                <label for="correo" class="label">Correo electrónico *</label>
+                <input id="correo" name="correo" type="email" autocomplete="email" required maxlength="150" class="field" />
+              </div>
+              <div>
+                <label for="telefono" class="label">Teléfono / celular</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" maxlength="30" class="field" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="interes" class="label">¿Qué le interesa?</label>
+                <select id="interes" name="interes" class="field">
+                  <option>NominaSIC</option>
+                  <option>NominaSIC - Plan Básico</option>
+                  <option>NominaSIC - Plan Profesional</option>
+                  <option>MyCont</option>
+                  <option>MyCont - Plan Básico</option>
+                  <option>MyCont - Plan Profesional</option>
+                  <option>Fábrica de Software</option>
+                  <option selected>Otro / información general</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="mensaje" class="label">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required maxlength="3000" class="field" placeholder="Cuéntenos qué necesita"></textarea>
+              </div>
+              <!-- Campo trampa anti-spam: los humanos no lo ven -->
+              <div class="hidden" aria-hidden="true">
+                <label for="website">No llenar</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="flex items-start gap-3 text-sm text-slate-600">
+                  <input id="autorizacion" name="autorizacion" type="checkbox" required class="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" />
+                  <span>Autorizo a UpperSoftware S.A.S a tratar mis datos personales para atender esta solicitud, conforme a la Ley 1581 de 2012. *</span>
+                </label>
+              </div>
+            </div>
+
+            <p id="form-status" class="mt-5 hidden rounded-lg px-4 py-3 text-sm" role="status" aria-live="polite"></p>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-xs text-slate-500">* Campos obligatorios</p>
+              <button id="submit-btn" type="submit" class="btn-primary sm:w-auto">
+                <svg id="spinner" class="hidden h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-opacity=".25" stroke-width="4"/><path d="M22 12a10 10 0 00-10-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+                <span id="submit-label">Enviar mensaje</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="bg-brand-950 text-brand-100">
+    <div class="container-x flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="text-lg font-bold text-white">UpperSoftware S.A.S</p>
+        <p class="text-sm text-brand-200">now in your world · Bogotá D.C., Colombia</p>
+      </div>
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Pie de página">
+        <a class="hover:text-white" href="#quienes-somos">Quiénes somos</a>
+        <a class="hover:text-white" href="#productos">Productos</a>
+        <a class="hover:text-white" href="#precios">Precios</a>
+        <a class="hover:text-white" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="border-t border-white/10">
+      <p class="container-x py-5 pb-24 text-xs text-brand-300 sm:pb-5">© <span id="year"></span> UpperSoftware S.A.S. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="#" data-whatsapp target="_blank" rel="noopener" aria-label="Escríbanos por WhatsApp"
+     class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-green-900/20 transition hover:scale-105 hover:bg-[#1ebe5b]">
+    <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+  </a>
+
+  <!-- Ícono WhatsApp reutilizable -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 01-4.82-1.32l-.35-.2-3.58.93.96-3.49-.23-.36a9.43 9.43 0 01-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.4 9.4 0 012.77 6.7c0 5.22-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0012.05.62C5.77.62.66 5.73.66 12.01c0 2.01.52 3.96 1.52 5.69L.57 23.6l6.04-1.58a11.36 11.36 0 005.44 1.38h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.34-8.05z"/></symbol>
+  </svg>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

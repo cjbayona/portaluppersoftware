@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 5rem; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto max-w-6xl px-4 sm:px-6; }
+  .eyebrow { @apply text-sm font-semibold uppercase tracking-wider text-brand-600; }
+  .h2 { @apply mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2; }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 focus-visible:ring-brand-500; }
+  .btn-ghost { @apply btn border border-brand-200 bg-white text-brand-700 hover:bg-brand-50 focus-visible:ring-brand-400; }
+  .btn-wa { @apply btn bg-[#25D366] text-white hover:bg-[#1ebe5b] focus-visible:ring-[#25D366]; }
+  .card { @apply rounded-2xl border border-brand-100 bg-white p-6 shadow-sm; }
+  .field { @apply mt-1 block w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200; }
+  .label { @apply block text-sm font-medium text-slate-700; }
+  .checks { @apply space-y-2.5 text-sm text-slate-600; }
+  .checks li {
+    @apply relative pl-7;
+    background: no-repeat left 0.1rem / 1.1rem
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%233589cb'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.7-9.3a1 1 0 00-1.4-1.4L9 10.6 7.7 9.3a1 1 0 00-1.4 1.4l2 2a1 1 0 001.4 0l4-4z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+}
